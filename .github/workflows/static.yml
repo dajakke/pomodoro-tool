@@ -20,10 +20,17 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build
-        run: npm run build
+      - name: Create React App
+        run: npx create-react-app temp-app
+
+      - name: Copy source files
+        run: |
+          cp -r src/* temp-app/src/
+          cp -r public/* temp-app/public/
+          cd temp-app
+          npm run build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: build
+          folder: temp-app/build
