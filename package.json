@@ -66,7 +66,6 @@
     "deploy": "gh-pages -d build",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "build": "cross-env NODE_ENV=production next build",
     "test": "node scripts/test.js"
   },
   "eslintConfig": {
